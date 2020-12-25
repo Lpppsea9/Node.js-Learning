@@ -5,6 +5,10 @@ const server = http.createServer((req,res) => {
   res.end("<h1>hello Lppp!</h1>")
 })
 
-server.listen(3000,() => {
-  console.log('listening on 3000');
+// server.listen(3000,() => {
+//   console.log('listening on 3000');
+// })
+
+server.listen(3000, () => {
+  console.log('listening osn 3000');
 })
