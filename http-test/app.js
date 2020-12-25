@@ -32,6 +32,9 @@ const server = http.createServer((req, res) => {
     req.on('end', () => {
       resData.postData = postData
       //  返回
+      res.end(
+        JSON.stringify(resData)
+      )
     })
   }
 })
