@@ -1,5 +1,5 @@
 class BaseModel {
-  constructor(data, message) {
+  constructor(data, message) { //data是对象 message是消息
     if(typeof data === 'string') {
       this.message = data
       data = null
