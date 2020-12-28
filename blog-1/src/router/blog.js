@@ -16,13 +16,14 @@ const handleBlogRouter = (req, res) => {
   if(method === 'GET' && req.path === '/api/blog/detail') {
     const id = req.query.id
     const data = getDetail(id)
+    return new SuccessModel(data)
   }
 
   // 新建一篇博客
   if(method === 'POST' && req.path === '/api/blog/new') {
-    const id = req.query.id
-    const data = getDetail(id)
-    return new SuccessModel(data)
+    return {
+      msg: '这是新建博客的接口'
+    }
   }
 
   // 更新一篇博客
