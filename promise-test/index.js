@@ -57,3 +57,6 @@ getFileContent('a.json').then(aData => {
 }).then(cData => {
     console.log('c data',cData);
 })
+
+// async await
+// koa2

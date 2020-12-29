@@ -30,7 +30,35 @@ const getDetail = (id) => {
   }
 }
 
+// 新建博客
+const newBlog = (blogData = {}) => {
+    // blogData 是一个博客对象, 包含 title content 属性
+    console.log('newBlog blogData...', blogData);
+
+    return {
+        id: 3 // 表示新建博客，插入到数据表里面的 id
+    }
+}
+
+// 更新博客
+const updateBlog = (id, blogData = {}) => {
+    // id 就是要更新博客的 id
+    // blogData 是一个博客对象，包含 title content 属性
+    // console.log('update blog', id, blogData);
+
+    return true
+}
+
+// 删除路由
+const delBlog = (id) => {
+    // id就是要删除博客的 id
+    return true
+}
+
 module.exports = { //为什么是对象？ 因为有多个函数
   getList,
-  getDetail
+  getDetail,
+  newBlog,
+  updateBlog,
+  delBlog
 }
