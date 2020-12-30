@@ -42,7 +42,7 @@ const handleBlogRouter = (req, res) => {
   }
 
   // 删除一篇博客
-  if(method === 'POST' && req.path === '/api/blog/update') {
+  if(method === 'POST' && req.path === '/api/blog/del') {
     const result = delBlog(id)
     if (result) {
         return new SuccessModel()

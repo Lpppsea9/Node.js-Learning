@@ -40,7 +40,7 @@ const newBlog = (blogData = {}) => {
     }
 }
 
-// 更新博客
+// 更新一篇博客
 const updateBlog = (id, blogData = {}) => {
     // id 就是要更新博客的 id
     // blogData 是一个博客对象，包含 title content 属性
@@ -49,7 +49,7 @@ const updateBlog = (id, blogData = {}) => {
     return true
 }
 
-// 删除路由
+// 删除一篇博客
 const delBlog = (id) => {
     // id就是要删除博客的 id
     return true
