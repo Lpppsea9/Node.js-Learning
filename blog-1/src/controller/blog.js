@@ -63,3 +63,18 @@ module.exports = { //为什么是对象？ 因为有多个函数
   updateBlog,
   delBlog
 }
+
+
+
+/* 
+路由 和 API
+
+API:
+    前端和后端、不同端（子系统）之间对接的一个术语
+    url(路由) `/api/blog/list` get,输入，输出
+
+路由：
+    API的一部分
+    后端系统内部的一个模块
+ 
+ */
