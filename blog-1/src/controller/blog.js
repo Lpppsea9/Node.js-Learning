@@ -1,22 +1,19 @@
+const { exec } = require('../db/mysql')
+
+
 // 获取博客列表
 const getList = (author, keyword) => {
-  // 先返回假数据（格式是正确的）
-  return [
-    {
-      id:1,
-      title:'标题A',
-      content: '内容A',
-      createTime: 1609136868752,
-      author: 'liupeng'
-    },
-    {
-      id:2,
-      title:'标题B',
-      content: '内容B',
-      createTime: 1609136959905,
-      author: 'liupeng2'
-    }
-  ]
+  let sql = `select * from blogs where 1=1 ` // 通过和后面的and连接使语法无措
+  if (author) {
+      sql += `and author='${author}' ` //and 这个写法的作用1=1
+  }
+  if (keyword) {
+      sql += `and title like '%${keyword}%' `
+  }
+  sql += `order by createtime desc;`
+
+  // 返回 promise
+  return exec(sql)
 }
 
 // 博客详情

@@ -4,7 +4,7 @@ const mysql = require('mysql')
 const con = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'Mysql-2018',
+    password: 'root',
     port: '3306',
     database: 'myblog' //使用数据库
 })
@@ -13,7 +13,9 @@ const con = mysql.createConnection({
 con.connect()
 
 // 执行 sql 语句
-const sql = 'select * from users'
+// const sql = 'select id, username from users' //查询
+// const sql = `update users set realname='李四2' where username='lisi';`
+const sql = `insert into blogs(title, content, createtime, author) values('标题C','内容C',1609918767349,'zhangsan');`
 con.query(sql, (err, result) => {
     if (err) {
         console.error(err);
