@@ -1,6 +1,5 @@
 const { exec } = require('../db/mysql')
 
-
 // 获取博客列表
 const getList = (author, keyword) => {
   let sql = `select * from blogs where 1=1 ` // 通过和后面的and连接使语法无措

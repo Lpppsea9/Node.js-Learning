@@ -21,17 +21,7 @@ function exec(sql) {
     return promise
 }
 
-// function exec(sql) {
-//     con.query(sql, (err, result) => {
-//         if(err) {
-//             console.error(err);
-//             return
-//         }
-//         console.log(result);
-//     })
-// }
-
-// con.end() // 保持连接状态，不让它关闭
+// con.end() // 不结束连接，保持连接状态，不让它关闭
 
 module.exports = {//返回 exec 这个函数
     exec
