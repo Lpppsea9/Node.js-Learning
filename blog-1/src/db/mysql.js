@@ -1,5 +1,5 @@
 const mysql = require('mysql')
-const { MYSQL_CONF } = require('../conf/db')
+const { MYSQL_CONF } = require('../conf/db') // MYSQL_CONF是nodejs采用的配置
 
 // 创建连接对象
 const con = mysql.createConnection(MYSQL_CONF)
@@ -11,7 +11,7 @@ con.connect()
 function exec(sql) {
     const promise = new Promise((resolve, reject) => {
         con.query(sql, (err, result) => {
-            if(err) {
+            if (err) {
                 reject(err);
                 return
             }

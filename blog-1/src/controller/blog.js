@@ -1,18 +1,20 @@
 const { exec } = require('../db/mysql')
 
+// xxx.html?k1=v1&k1=v1&k2=v2&k3=v3
+
 // 获取博客列表
 const getList = (author, keyword) => {
-  let sql = `select * from blogs where 1=1 ` // 通过和后面的and连接使语法无措
-  if (author) {
-      sql += `and author='${author}' ` //and 这个写法的作用1=1
-  }
-  if (keyword) {
-      sql += `and title like '%${keyword}%' `
-  }
-  sql += `order by createtime desc;`
+    let sql = `select * from blogs where 1=1 ` // 通过和后面的and连接使语法无措
+    if (author) {
+        sql += `and author='${author}' ` //and 这个写法的作用1=1
+    }
+    if (keyword) {
+        sql += `and title like '%${keyword}%' `
+    }
+    sql += `order by createtime desc;`
 
-  // 返回 promise
-  return exec(sql)
+    // 返回 promise
+    return exec(sql)
 }
 
 // 博客详情

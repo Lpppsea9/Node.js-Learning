@@ -15,7 +15,7 @@ con.connect()
 // 执行 sql 语句
 // const sql = 'select id, username from users' //查询
 // const sql = `update users set realname='李四2' where username='lisi';`
-const sql = `insert into blogs(title, content, createtime, author) values('标题C','内容C',1609918767349,'zhangsan');`
+const sql = `select * from blogs`
 con.query(sql, (err, result) => {
     if (err) {
         console.error(err);

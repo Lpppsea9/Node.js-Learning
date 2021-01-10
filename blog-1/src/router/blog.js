@@ -18,7 +18,7 @@ const handleBlogRouter = (req, res) => {
     // const listData = getList(author, keyword)
     // return new SuccessModel(listData)
     const result = getList(author, keyword)
-    return result.then(listData => {
+    return result.then(listData => { // return 一个 promise
         return new SuccessModel(listData)
     })
   }
