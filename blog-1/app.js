@@ -44,51 +44,34 @@ const serverHandle = (req, res) => {
     getPostData(req).then(postData => {
         req.body = postData
 
-    //处理 blog 路由
-    //   const blogData = handleBlogRouter( req, res )  // 是一个结果的值
-    //   if (blogData) {
-    //       res.end(
-    //           JSON.stringify(blogData)
-    //       )
-    //       return
-    //   }
-    const blogResult = handleBlogRouter(req, res) // 返回一个 promise
-    if (blogResult) {
-        blogResult.then(blogData => {
-            res.end(
-                JSON.stringify(blogData)
-            )
-        })
-        return
-    }
+        //处理 blog 路由
+        //   const blogData = handleBlogRouter( req, res )  // 是一个结果的值
+        //   if (blogData) {
+        //       res.end(
+        //           JSON.stringify(blogData)
+        //       )
+        //       return
+        //   }
+        const blogResult = handleBlogRouter(req, res) // 返回一个 promise
+        if (blogResult) {
+            blogResult.then(blogData => {
+                res.end(
+                    JSON.stringify(blogData)
+                )
+            })
+            return
+        }
       
-    //处理 user 路由
-    const userData = handleUserRouter( req, res )
-    if(userData) {
-        res.end(
-            JSON.stringify(userData)
-        )
-        return
-    }
-  })
+        //处理 user 路由
+        const userData = handleUserRouter( req, res )
+        if(userData) {
+            res.end(
+                JSON.stringify(userData)
+            )
+            return
+        }
+    })
 
-    // 处理 blog 路由
-    const blogData = handleBlogRouter(req, res)
-    if(blogData) {
-        res.end(
-            JSON.stringify(blogData)
-        )
-        return
-    }
-
-    //处理 user 路由
-    const userData = handleUserRouter(req, res)
-    if(userData) {
-        res.end(
-            JSON.stringify(userData)
-        )
-        return
-    }
   
     // 未命中路由，返回 404
     res.writeHead(404, {"Content-type": "text/plain"})
